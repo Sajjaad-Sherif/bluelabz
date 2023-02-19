@@ -30,6 +30,7 @@ var options = {
 function handleMotionEvent(event) {
     var output = document.getElementById('accelerometer_detials')
     var properties = "";
+    console.log(event)
     for(var prop in event){
         properties+= prop +event[prop]+"<br>";
     }
