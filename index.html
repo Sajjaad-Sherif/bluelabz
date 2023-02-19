@@ -1,4 +1,5 @@
-<div id="details"></div>
+<div id="gps_details"></div>
+<div id="accelerometer_detials"></div>
 <script>
 	// map.innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
 var reqcount = 0;
@@ -10,12 +11,12 @@ function successCallback(position) {
     console.log(position.coords)
     // Show a map centered at latitude / longitude.
     reqcount++;
-    details.innerHTML = "Accuracy: "+accuracy+"<br>";
-    details.innerHTML += "Latitude: "+latitude+" | Longitude: "+longitude+"<br>";
-    details.innerHTML += "Altitude: "+altitude+"<br>";
-    details.innerHTML += "Heading: "+heading+"<br>";
-    details.innerHTML += "Speed: "+(speed * 3.6)+"Km/h<br>";
-    details.innerHTML += "reqcount: "+reqcount;
+    gps_details.innerHTML = "Accuracy: "+accuracy+"<br>";
+    gps_details.innerHTML += "Latitude: "+latitude+" | Longitude: "+longitude+"<br>";
+    gps_details.innerHTML += "Altitude: "+altitude+"<br>";
+    gps_details.innerHTML += "Heading: "+heading+"<br>";
+    gps_details.innerHTML += "Speed: "+(speed * 3.6)+"Km/h<br>";
+    gps_details.innerHTML += "reqcount: "+reqcount;
 }
 function errorCallback(error) {
 	
@@ -25,4 +26,21 @@ var options = {
 	timeout: 500,
 	maximumAge: 0
 };
+
+function handleMotionEvent(event) {
+
+    // const x = event.accelerationIncludingGravity.x;
+    // const y = event.accelerationIncludingGravity.y;
+    // const z = event.accelerationIncludingGravity.z;
+
+
+    // Do something awesome.
+    accelerometer_detials.innerHTML = "Acceleration : "+event.acceleration +"<br>";
+    accelerometer_detials.innerHTML += "AccelerationIncludingGravity: "+event.accelerationIncludingGravity+" | Longitude: "+longitude+"<br>";
+    accelerometer_detials.innerHTML += "rotationRate : "+event.rotationRate+"<br>";
+    accelerometer_detials.innerHTML += "Interval: "+event.interval+"<br>";
+
+}
+
+window.addEventListener("devicemotion", handleMotionEvent, true);
 </script>
