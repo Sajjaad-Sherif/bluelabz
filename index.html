@@ -1,5 +1,6 @@
 <div id="gps_details"></div>
 <div id="accelerometer_detials"></div>
+<div id="orientation_detials"></div>
 <script>
 	// map.innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q='+latitude+','+longitude+'&amp;z=15&amp;output=embed"></iframe>';
 var reqcount = 0;
@@ -55,4 +56,25 @@ function handleMotionEvent(event) {
 }
 
 window.addEventListener("devicemotion", handleMotionEvent, true);
+
+window.addEventListener("deviceorientation", (event) => {
+    const rotateDegrees = event.alpha; // alpha: rotation around z-axis
+    const leftToRight = event.gamma; // gamma: left to right
+    const frontToBack = event.beta; // beta: front back motion
+
+    var output = document.getElementById('orientation_detials')
+    var properties = "";
+    console.log(event)
+    // for(var prop in event){
+    //     properties+= prop +event[prop]+"<br>";
+    // }
+    properties += "rotateDegrees :" + rotateDegrees+"<br>";
+    properties += "leftToRight :" + leftToRight+"<br>";
+    properties += "frontToBack :" + frontToBack +"<br>";
+    handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+}, true);
+
+const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => {
+  // do something amazing
+};
 </script>
