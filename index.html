@@ -31,9 +31,12 @@ function handleMotionEvent(event) {
     var output = document.getElementById('accelerometer_detials')
     var properties = "";
     console.log(event)
-    for(var prop in event){
-        properties+= prop +event[prop]+"<br>";
-    }
+    // for(var prop in event){
+    //     properties+= prop +event[prop]+"<br>";
+    // }
+    properties += "event.acceleration.x" + event.acceleration.x+"<br>";
+    properties += "event.acceleration.y" + event.acceleration.y+"<br>";
+    properties += "event.acceleration.z" + event.acceleration.z+"<br>";
     output.innerHTML = properties
     // const x = event.accelerationIncludingGravity.x;
     // const y = event.accelerationIncludingGravity.y;
