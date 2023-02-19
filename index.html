@@ -28,17 +28,22 @@ var options = {
 };
 
 function handleMotionEvent(event) {
-
+    var output = document.getElementById('accelerometer_detials')
+    var properties = "";
+    for(var prop in event){
+        properties+= prop +event[prop]+"<br>";
+    }
+    output.innerHTML = properties
     // const x = event.accelerationIncludingGravity.x;
     // const y = event.accelerationIncludingGravity.y;
     // const z = event.accelerationIncludingGravity.z;
 
 
     // Do something awesome.
-    accelerometer_detials.innerHTML = "Acceleration : "+event.acceleration +"<br>";
-    accelerometer_detials.innerHTML += "AccelerationIncludingGravity: "+event.accelerationIncludingGravity+" | Longitude: "+longitude+"<br>";
-    accelerometer_detials.innerHTML += "rotationRate : "+event.rotationRate+"<br>";
-    accelerometer_detials.innerHTML += "Interval: "+event.interval+"<br>";
+    // accelerometer_detials.innerHTML = "Acceleration : "+event.acceleration +"<br>";
+    // accelerometer_detials.innerHTML += "AccelerationIncludingGravity: "+event.accelerationIncludingGravity+" | Longitude: "+longitude+"<br>";
+    // accelerometer_detials.innerHTML += "rotationRate : "+event.rotationRate+"<br>";
+    // accelerometer_detials.innerHTML += "Interval: "+event.interval+"<br>";
 
 }
 
