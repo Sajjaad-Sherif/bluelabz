@@ -71,6 +71,7 @@ window.addEventListener("deviceorientation", (event) => {
     properties += "rotateDegrees :" + rotateDegrees+"<br>";
     properties += "leftToRight :" + leftToRight+"<br>";
     properties += "frontToBack :" + frontToBack +"<br>";
+    output.innerHTML = properties
     handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
 }, true);
 
