@@ -13,7 +13,7 @@ function successCallback(position) {
     details.innerHTML += "Latitude: "+latitude+" | Longitude: "+longitude+"<br>";
     details.innerHTML += "Altitude: "+altitude+"<br>";
     details.innerHTML += "Heading: "+heading+"<br>";
-    details.innerHTML += "Speed: "+speed+"<br>";
+    details.innerHTML += "Speed: "+(speed * 3.6)+"Km/h<br>";
     details.innerHTML += "reqcount: "+reqcount;
 }
 function errorCallback(error) {
