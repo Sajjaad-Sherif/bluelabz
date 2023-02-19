@@ -37,6 +37,9 @@ function handleMotionEvent(event) {
     properties += "event.acceleration.x" + event.acceleration.x+"<br>";
     properties += "event.acceleration.y" + event.acceleration.y+"<br>";
     properties += "event.acceleration.z" + event.acceleration.z+"<br>";
+    properties += "event.accelerationIncludingGravity.x" + event.acceleration.x+"<br>";
+    properties += "event.accelerationIncludingGravity.y" + event.acceleration.y+"<br>";
+    properties += "event.accelerationIncludingGravity.z" + event.acceleration.z+"<br>";
     output.innerHTML = properties
     // const x = event.accelerationIncludingGravity.x;
     // const y = event.accelerationIncludingGravity.y;
